@@ -181,7 +181,7 @@ Comparison of the best-performing configuration for each architecture on the Reg
 ``` bibtex
 @misc{parashchuk2025enhancingfloorplanrecognition,
       title={Enhancing Floor Plan Recognition: A Hybrid Mix-Transformer and U-Net Approach for Precise Wall Segmentation}, 
-      author={Dmitriy Parashchuk and Alexey Kapshitskiy and Yuriy Karyakin},
+      author={Dmitriy Parashchuk and Alexey Kaspshitskiy and Yuriy Karyakin},
       year={2025},
       eprint={2512.02413},
       archivePrefix={arXiv},
