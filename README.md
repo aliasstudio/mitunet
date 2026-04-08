@@ -1,6 +1,10 @@
 # **MitUNet: Enhancing Floor Plan Recognition**
 
-**Official implementation of the paper: "Enhancing Floor Plan Recognition: A Hybrid Mix-Transformer and U-Net Approach for Precise Wall Segmentation"**
+**Official implementation of the paper:**
+> [**Enhancing Floor Plan Recognition: A Hybrid Mix-Transformer and U-Net Approach for Precise Wall Segmentation**](https://doi.org/10.1007/s00138-026-01815-y)
+
+[![Paper](https://img.shields.io/badge/Springer-Article-blue)](https://doi.org/10.1007/s00138-026-01815-y)
+[![arXiv](https://img.shields.io/badge/arXiv-2512.02413-b31b1b.svg)](https://arxiv.org/abs/2512.02413)
 
 ## **Overview**
 
@@ -159,34 +163,35 @@ cv2.imwrite("output_mask.png", result_mask * 255)
 
 ## **Results**
 
-Metrics on the Regional Dataset (best configuration per architecture).
+Comparison of the best-performing configuration for each architecture on the Regional Dataset.
+The Boundary IoU (B-IoU) metric is included to demonstrate the accuracy of structural edge preservation. Additionally, MitUNet requires less VRAM compared to heavier CNN baselines like UNet++.
 
-Comparison of the best-performing configuration for each architecture on the Regional Dataset. MitUNet demonstrates the highest precision and mIoU while maintaining moderate memory consumption compared to heavy CNN-based models like UNet++.
+| Model | Encoder | Loss | Recall (%) | Precision (%) | Accuracy (%) | mIoU (%) | B-IoU (%) | VRAM (MiB) |
+| :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- |
+| **MitUNet (Ours)** | **mit_b4** | **Tversky** | 92.35 | **94.82** | **98.86** | **87.91** | **85.01** | 1751 |
+| UNet++ | resnet50 | Lovasz | 93.74 | 92.65 | 98.77 | 87.25 | 84.68 | 3311 |
+| UNet scSE | resnet50 | Dice | 93.63 | 92.34 | 98.73 | 86.87 | 84.25 | 1503 |
+| UPerNet | mit_b4 | Dice | 92.97 | 92.75 | 98.71 | 86.67 | 82.91 | 2211 |
+| SegFormer | mit_b4 | Lovasz | **93.88** | 91.75 | 98.69 | 86.57 | 83.26 | 1270 |
+| DeepLabV3+ | resnet50 | Lovasz | 91.42 | 92.56 | 98.57 | 85.16 | 81.59 | **947** |
 
-| Model | Encoder | Loss | Recall (%) | Precision (%) | Accuracy (%) | mIoU (%) | VRAM (MiB) |
-| :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- |
-| **MitUNet (Ours)** | **mit\_b4** | **Tversky** | 92.25 | **94.84** | **98.85** | **87.84** | 1751 |
-| MitUNet | mit\_b4 | Dice | **93.97** | 92.54 | 98.77 | 87.35 | 1751 |
-| UNet++ | resnet50 | Lovasz | 93.10 | 93.17 | 98.76 | 87.15 | 3311 |
-| UPerNet | mit\_b4 | Lovasz | 93.24 | 92.55 | 98.72 | 86.73 | 2219 |
-| SegFormer | mit\_b4 | Lovasz | 93.35 | 92.11 | 98.68 | 86.43 | 1270 |
-| DeepLabV3+ | resnet50 | Lovasz | 92.74 | 91.13 | 98.53 | 85.07 | **947** |
-
-*VRAM measured on RTX 4060 Ti (16 GB), batch size 4.*
+*VRAM measured on RTX 4060 Ti (16 GB), batch size 4. Tversky parameters used: α=0.6, β=0.4.*
 
 ------------------------------------------------------------------------
 
 ## **Citation**
 
 ``` bibtex
-@misc{parashchuk2025enhancingfloorplanrecognition,
-      title={Enhancing Floor Plan Recognition: A Hybrid Mix-Transformer and U-Net Approach for Precise Wall Segmentation}, 
-      author={Dmitriy Parashchuk and Alexey Kaspshitskiy and Yuriy Karyakin},
-      year={2025},
-      eprint={2512.02413},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2512.02413}, 
+@Article{mitunet2026,
+  author   = {Parashchuk, Dmitriy and Kaspshitskiy, Alexey and Karyakin, Yuriy},
+  journal  = {Machine Vision and Applications},
+  title    = {Enhancing floor plan recognition: a hybrid mix-transformer and U-Net approach for precise wall segmentation},
+  year     = {2026},
+  number   = {3},
+  pages    = {53},
+  volume   = {37},
+  doi      = {10.1007/s00138-026-01815-y},
+  url      = {https://doi.org/10.1007/s00138-026-01815-y}
 }
 ```
 

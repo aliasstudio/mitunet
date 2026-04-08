@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Parashchuk"
+  given-names: "Dmitriy"
+- family-names: "Kaspshitskiy"
+  given-names: "Alexey"
+- family-names: "Karyakin"
+  given-names: "Yuriy"
+title: "MitUNet: Enhancing Floor Plan Recognition"
+version: 1.0.0
+doi: 10.1007/s00138-026-01815-y
+date-released: 2026-04-07
+url: "https://github.com/aliasstudio/mitunet"
+preferred-citation:
+  type: article
+  authors:
+  - family-names: "Parashchuk"
+    given-names: "Dmitriy"
+  - family-names: "Kaspshitskiy"
+    given-names: "Alexey"
+  - family-names: "Karyakin"
+    given-names: "Yuriy"
+  doi: "10.1007/s00138-026-01815-y"
+  journal: "Machine Vision and Applications"
+  month: 4
+  title: "Enhancing floor plan recognition: a hybrid mix-transformer and U-Net approach for precise wall segmentation"
+  issue: 3
+  volume: 37
+  year: 2026
+  start: 53
